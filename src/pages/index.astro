@@ -1,42 +1,38 @@
 ---
-import H1 from "../components/h1.astro";
+import Header from "../components/Header/Header"
+import Layout from "../layouts/Layout.astro";
+
+
 ---
 
-<html lang="en">
-    <head>
-        <title>Astro</title>
-        <meta name="Author" content="Lifo123" />
 
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            rel="preload"
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
-            as="style"
-            onload="this.onload=null;this.rel='stylesheet'"
-        />
-        <noscript>
-            <link
-                rel="stylesheet"
-                href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
-            />
-        </noscript>
-
-        <style is:global>
-            * {
-                margin: 0;
-                padding: 0;
-                font-family: Inter, sans-serif;
-            }
-        </style>
-    </head>
-
-    <body>
-        <h1>Hola</h1>
-        <H1 />
-    </body>
-</html>
+<Layout title="PromedyCalculator">
+    <style is:raw>
+        main {
+            padding-block: 90px;
+            width: 70%;
+            height: max-content;
+            gap: 24px;
+        }
+        
+        h2 {
+            font-size: 56px;
+            font-weight: bold;
+        }
+        
+        main p {
+            width: 70%;
+            margin-bottom: 10px;
+            color: #4f4f4f;
+            font-weight: 500;
+            line-height: 22px;
+        }
+        
+    </style>
+    <Header />
+        <main class="f-col f-align-center mx-auto">
+            <h2 class="text-center">The Easy way to calculate promedy of notes Getting instant Result</h2>
+            <p class="text-center">Astroplate is a free starter template built with Astro and TailwindCSS, providing everything you need to jumpstart your Astro project and save valuable time.</p>
+            <a href="App" class="pc-btn-black br-6 d-flex f-center" style="font-size: 16px;">Get Started For Free</a>
+        </main>
+</Layout>
