@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, sans-serif;
+    color: var(--p-font-h1);
+    font-size: 1rem;
+}
+
+/*----Buttons----*/
+.pc-btn-black {
+    background-color: #000;
+    outline: solid 1px #000;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 14px 30px;
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+}
+.inner-empty {
+    background-color: transparent;
+    color: #000;
+}
