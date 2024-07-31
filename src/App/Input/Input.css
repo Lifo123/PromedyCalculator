@@ -1,11 +1,13 @@
 .app-input{
-    width: 240px;
+    min-width: 40px;
+    width: 80%;
     border: solid 1px #4F4F4F;
     padding: 12px 20px;
     font-size: 16px;
 
 }
 .app-input + .per{
-    width: 80px;
+    min-width: 80px;
+    width: 10%;
     text-align: center;
 }

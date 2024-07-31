@@ -11,9 +11,9 @@
     height: max-content;
     width: 70%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     place-items: center;
-    gap: 80px;
+    gap: 30px;
     margin-bottom: 100px;
 }
 
@@ -22,14 +22,52 @@
     align-self: flex-end;
 }
 
+.app-config .arrow{
+    height: 26px;
+    width:26px;
+}
+.app-config .separator{
+    background-color: #c5c5c5;
+    height: 2px;
+    width: 50%;
+    margin-left: 10px;
+}
+
+.app-drop-config{
+    background-color: #FFF;
+    height: max-content;
+    width: 100%;
+    border: solid 1px #6D6D6D;
+    top: calc(100% + 10px);
+}
+.app-drop-config h4{
+    border-bottom: solid 1px #6D6D6D;
+    padding: 14px;
+    text-align: center;
+}
+
 .app-result{
     border: solid 1px #6D6D6D;
-    height: 300px;
-    width: 294px;
+    height: max-content;
+    width: 280px;
     padding: 20px;
 }
 
 .app-result h4{
-    font-size: 70px;
+    font-size: 80px;
     font-weight: bold;
+}
+.app-result p{
+    border-top: solid 1px #6D6D6D;
+    padding: 24px 30px 6px 30px;
+}
+
+.promotion-adds{
+    margin-top: 20px;
+}
+.add-card{
+    border: solid 1px #6D6D6D;
+    border-radius: 8px;
+    height: 200px;
+    width: 380px;
 }

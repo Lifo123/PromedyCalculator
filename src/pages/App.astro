@@ -3,6 +3,7 @@ import { StrictMode } from "react";
 import AppRender from "../App/App";
 import Header from "../components/Header/Header";
 import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer/Footer.astro";
 ---
 
 <style is:raw>
@@ -43,11 +44,17 @@ import Layout from "../layouts/Layout.astro";
             <AppRender client:visible transition:persist />
         </StrictMode>
     </main>
-    <section class="w-70 mx-auto f-col f-align-center">
+    <section class="w-70 mx-auto f-col f-align-center g-5">
         <h3 class="app-title">Additional Funcionts</h3>
-        <p>
+        <p class="app-text w-60 text-center" style="font-size: 18px;">
             Astroplate is a free starter template built with Astro and
             TailwindCSS, providing everything you ale time.
         </p>
+        <div class="promotion-adds f-row f-justify-center g-50">
+            <div class="add-card"></div>
+            <div class="add-card"></div>
+        </div>
     </section>
+    <Footer />
 </Layout>
+
