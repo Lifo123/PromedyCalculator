@@ -1,4 +1,6 @@
 ---
+    import './Flifo.css'
+    import './GlobalStyles.css'
 
     interface Props {
         title: string;
@@ -6,9 +8,7 @@
 
     const {title} = Astro.props
 
----
-
-
+--- 
 <html lang="en">
     <head>
         <title>{title}</title>
@@ -16,7 +16,6 @@
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
 
         <!--Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,11 +24,7 @@
         <noscript>
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"/>
         </noscript>
-
-        <!--Lifo Styles-->
-        <link rel="stylesheet" href="/src/css/Flifo.css" />
-        <link rel="stylesheet" href="/src/css/Index.css" />
-
+    
     </head>
 
     <body>

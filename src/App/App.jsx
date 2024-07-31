@@ -44,7 +44,7 @@ export default function App() {
 
                             </div>
                         </div>
-                        <p className='text-center'>{GCData >= 11.5 ? 'Felicidades !Aprobaste!' : 'Lo sentimos, Suerte para la proxima'}</p>
+                        <p className='text-center'>{GCData >= 11.5 ? 'Felicidades !Aprobaste!' : 'Lo sentimos, No aprobaste'}</p>
 
                     </div>
                 </section>

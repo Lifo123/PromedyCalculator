@@ -3,11 +3,11 @@ import './Header.css'
 export default function Header({ app = false }) {
     return (
         <header className="f-row f-justify-between f-align-center">
-            <h1><a href="/">PromedyCal</a></h1>
+            <h1><a href="/PromedyCalculator">PromedyCal</a></h1>
             <ul className="f-row">
-                <li><a href="/">Home</a></li>
-                <li><a href="/About">About</a></li>
-                <li><a href="/Contact">Contact</a></li>
+                <li><a href="/PromedyCalculator">Home</a></li>
+                <li><a href="/PromedyCalculator/About">About</a></li>
+                <li><a href="/PromedyCalculator/Contact">Contact</a></li>
                 <li><a href="https://github.com/Lifo123/PromedyCalculator" target="_blank">Repository</a></li>
             </ul>
             {
@@ -20,7 +20,7 @@ export default function Header({ app = false }) {
                         </svg>
                     </span>
                 ) : (
-                    <a href="App" className='pc-btn-black inner-empty br-6' style={{ padding: '11px 24px' }}>Get Started</a>
+                    <a href="/PromedyCalculator/App" className='pc-btn-black inner-empty br-6' style={{ padding: '11px 24px' }}>Get Started</a>
                 )
             }
         </header>
