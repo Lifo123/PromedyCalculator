@@ -2,12 +2,12 @@ import './Header.css'
 
 export default function Header({ app = false }) {
     return (
-        <header class="f-row f-justify-between f-align-center">
+        <header className="f-row f-justify-between f-align-center">
             <h1><a href="/">PromedyCal</a></h1>
-            <ul class="f-row">
+            <ul className="f-row">
                 <li><a href="/">Home</a></li>
-                <li><a href="About">About</a></li>
-                <li><a href="Contact">Contact</a></li>
+                <li><a href="/About">About</a></li>
+                <li><a href="/Contact">Contact</a></li>
                 <li><a href="https://github.com/Lifo123/PromedyCalculator" target="_blank">Repository</a></li>
             </ul>
             {
