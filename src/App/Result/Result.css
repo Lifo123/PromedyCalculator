@@ -1,0 +1,23 @@
+.app-config .arrow{
+    height: 26px;
+    width:26px;
+}
+.app-config .separator{
+    background-color: #c5c5c5;
+    height: 2px;
+    width: 50%;
+    margin-left: 10px;
+}
+
+.app-drop-config{
+    background-color: #FFF;
+    height: max-content;
+    width: 100%;
+    border: solid 1px #6D6D6D;
+    top: calc(100% + 10px);
+}
+.app-drop-config h4{
+    border-bottom: solid 1px #6D6D6D;
+    padding: 14px;
+    text-align: center;
+}
