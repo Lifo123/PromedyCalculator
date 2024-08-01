@@ -7,6 +7,7 @@ export default function Input({ text = 'Nota', type = null, funct = null }) {
     const MaxNote = useStore(MaxNoteStore);
     const Decimal = useStore(DecimalStore);
 
+
     //Functions
     const HandleChange = (e) => {
         if(MaxNote === null){
@@ -15,10 +16,10 @@ export default function Input({ text = 'Nota', type = null, funct = null }) {
         if(Number(e.target.value) >= MaxNote){
             e.target.value = MaxNote;
         }
-        funct();
+        
     }
 
     return (
-        <input className='app-input br-6' placeholder={text} inputype={type === '%' ? `true` : `false`} onChange={HandleChange} maxLength={Decimal ? 7 : 4} tabIndex={0} use='yes'/>
+        <input className='app-input br-6' placeholder={text} onChange={HandleChange} maxLength={Decimal ? 7 : 4} tabIndex={0} use='yes'/>
     )
 }

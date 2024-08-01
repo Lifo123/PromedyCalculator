@@ -22,19 +22,24 @@
 
 .app-in-close{
     height: 40px;
-    width: 60px;
+    width: 40px;
     opacity: 0;
     cursor: auto;
-    transform: translateX(-10px);
-    transition: opacity 0.15s, transform 0.2s;
-    scale: 1.3;
+    transition: opacity 0.15s;
+    position: relative;
+    right: -6px;
+    scale: 1.2;
 }
 .app-in-close svg{
     stroke: #d12133;
+    transform: translateX(-20px);
+    transition: transform 0.2s;
 }
 
 .app-in-close:hover{
     opacity: 1;
     cursor: pointer;
+}
+.app-in-close:hover svg{
     transform: translateX(0px);
 }
