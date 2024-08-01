@@ -1,10 +1,16 @@
 ---
-import { StrictMode } from "react";
+//Css
+import '../App/App.css'
 
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header/Header";
-import AppRender from "../App/App";
 import Footer from "../components/Footer/Footer.astro";
+
+import Result from "../App/Result/Result";
+import InputContainer from "../App/Input/InputContainer";
+
+
+
 ---
 
 <style is:raw>
@@ -23,7 +29,7 @@ import Footer from "../components/Footer/Footer.astro";
     }
 </style>
 
-<Layout title="PromedyCalculator | App">
+<Layout title="PromedyCalculator | App" description="Calculate promedy of the semester easly.">
     <Header app={true} />
     <main class="f-col mx-auto" id="App">
         <a href="/PromedyCalculator" class="btn-back f-row f-align-center">
@@ -41,9 +47,14 @@ import Footer from "../components/Footer/Footer.astro";
             <p>Back</p>
         </a>
 
-        <StrictMode>
-            <AppRender client:visible transition:persist />
-        </StrictMode>
+        <section class="app-container mx-auto">
+            <Result client:visible/>
+            <section class="app-right f-col">
+                <h3 class='app-subtitle'>Promedy Calculator</h3>
+                <p class='app-text'>Astroplate is a free starter template built with Astro and TailwindCSS, providing.</p>
+                <InputContainer client:visible/>
+            </section>
+        </section>
     </main>
     <section class="w-70 mx-auto f-col f-align-center g-5">
         <h3 class="app-title">Additional Funcionts</h3>

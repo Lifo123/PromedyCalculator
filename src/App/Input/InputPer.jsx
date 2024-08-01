@@ -1,10 +1,7 @@
 import './Input.css'
-import { useContext } from 'react';
-import { AppContext } from '../Context/AppContext';
 
 export default function Input({text = `00%`, funct = null}) {
     //Context
-    const App = useContext(AppContext);
 
     //Functions
     const HandleChange = (e) => {

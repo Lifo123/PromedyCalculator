@@ -1,19 +1,18 @@
 import './Input.css'
-import { useContext } from 'react'
-import { AppContext } from '../Context/AppContext'
+import { useStore } from '@nanostores/react';
+import { MaxNoteStore } from '../../context/GlobalContext';
 
 export default function Input({ text = 'Nota', type = null, funct = null }) {
-    //Context
-    const {Config} = useContext(AppContext)
-
+    //GlobalState
+    const MaxNote = useStore(MaxNoteStore);
 
     //Functions
     const HandleChange = (e) => {
-        if(Config.MaxNote === null){
+        if(MaxNote === null){
             return;
         }
-        if(Number(e.target.value) >= Config.MaxNote){
-            e.target.value = Config.MaxNote;
+        if(Number(e.target.value) >= MaxNote){
+            e.target.value = MaxNote;
         }
         funct();
     }

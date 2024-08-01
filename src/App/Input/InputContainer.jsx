@@ -1,13 +1,14 @@
-import { useContext, useState } from 'react';
-import { AppContext } from '../Context/AppContext';
+import { useState } from 'react';
+import { useStore } from '@nanostores/react';
+import { ResultStore } from '../../context/GlobalContext';
 
 import Input from '../Input/Input'
 import InputPer from '../Input/InputPer'
 
 
 export default function InputContainer() {
-    //Context
-    const {setResult} = useContext(AppContext);
+    //GlobalStates
+    const Result = useStore(ResultStore);
 
     //States
     const [inputs, setInputs] = useState([{}, {}, {}, {}]);
@@ -21,12 +22,12 @@ export default function InputContainer() {
     }
 
     const HandleCalcPromedy = () => {
-        let Result = 0;
+        let ResultT = 0;
         document.querySelectorAll(`.app-input[inputype = false]`).forEach(element => {
             let number = Number(element.value);
-            Result += number;
+            ResultT += number;
         })
-        setResult(Result / inputs.length)
+        ResultStore.set(ResultT / inputs.length)
     }
 
 
