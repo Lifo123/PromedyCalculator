@@ -1,13 +1,14 @@
 import { useRef, useState } from "react";
 import { useStore } from "@nanostores/react";
-import { MaxNoteStore } from "../../context/GlobalContext";
+import { MaxNoteStore, DecimalStore } from "../../context/GlobalContext";
 
 import useTimer from "../../Hooks/useTimer";
 
 export default function AppConfig() {
     //GlobalStates
     const MaxNote = useStore(MaxNoteStore);
-
+    const Decimal = useStore(DecimalStore);
+ 
     //Refs
     const Drop = useRef(null);
 
@@ -17,8 +18,7 @@ export default function AppConfig() {
     //States
     const [DropState, setDropState] = useState(false);
 
-    //Functions
-
+    //DropDown
     const HandleDropConfig = () => {
         setDropState((v) => !v);
         document.addEventListener('click', HandleDocument)
@@ -27,6 +27,16 @@ export default function AppConfig() {
         if (!Drop.current.parentElement.contains(e.target)) {
             setDropState(false);
             document.removeEventListener('click', HandleDocument)
+        }
+    }
+
+     //Functions
+     const MaxNoteValidation = (e) => {
+        let Num = Number(e.target.value);
+        if (Num <= 0) {
+            e.target.value = '';
+        } else if (Num >= 1000) {
+            e.target.value = 1000;
         }
     }
     const setMaxNote = (e) => {
@@ -43,17 +53,10 @@ export default function AppConfig() {
             }
         });
     };
-    const MaxNoteValidation = (e) => {
-        let Num = Number(e.target.value);
-        if (Num <= 0) {
-            e.target.value = '';
-        } else if (Num >= 1000) {
-            e.target.value = 1000;
-        }
-    }
+    
 
     const setDecimals = (e) => {
-
+        DecimalStore.set(e.target.checked);
     }
 
     return (

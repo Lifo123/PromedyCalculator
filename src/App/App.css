@@ -1,9 +1,11 @@
 .none{
     background-color: transparent;
-    border: none;
+    border: none !important;
     outline: none;
     pointer-events: none;
     user-select: none;
+    outline: none;
+    cursor: auto !important;
     width: 240px;
 }
 
@@ -23,9 +25,8 @@
 }
 
 .app-result{
+    height: 290px;
     border: solid 1px #6D6D6D;
-    height: max-content;
-    width: 280px;
     padding: 20px;
 }
 

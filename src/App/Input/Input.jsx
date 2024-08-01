@@ -1,10 +1,11 @@
 import './Input.css'
 import { useStore } from '@nanostores/react';
-import { MaxNoteStore } from '../../context/GlobalContext';
+import { DecimalStore, MaxNoteStore } from '../../context/GlobalContext';
 
 export default function Input({ text = 'Nota', type = null, funct = null }) {
     //GlobalState
     const MaxNote = useStore(MaxNoteStore);
+    const Decimal = useStore(DecimalStore);
 
     //Functions
     const HandleChange = (e) => {
@@ -18,8 +19,6 @@ export default function Input({ text = 'Nota', type = null, funct = null }) {
     }
 
     return (
-        <input className='app-input br-6' placeholder={text} inputype={type === '%' ? `true` : `false`} onChange={HandleChange} maxLength={4} tabIndex={0}>
-
-        </input>
+        <input className='app-input br-6' placeholder={text} inputype={type === '%' ? `true` : `false`} onChange={HandleChange} maxLength={Decimal ? 7 : 4} tabIndex={0} use='yes'/>
     )
 }
