@@ -1,20 +1,73 @@
 import './Result.css'
-import { useContext } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { AppContext } from '../Context/AppContext';
+import useTimer from '../../Hooks/useTimer';
 
 export default function Result() {
-    //States
-    const {Result} = useContext(AppContext);
-    
+    //Hooks
+    const { Counting } = useTimer(40);
 
-     //Functions
-     const HandleOpenConfig = (e) => {
-        e.target.closest('.click').nextElementSibling.classList.toggle('d-none');
+    //Context
+    const App = useContext(AppContext);
+
+    //States
+    const [DropState, setDropState] = useState(false);
+
+    //Refs
+    const Drop = useRef(null);
+
+    //Functions
+    const HandleDropConfig = () => {
+        setDropState((v) => !v);
+        document.addEventListener('click', HandleDocument)
     }
+    const HandleDocument = (e) => {
+        if (!Drop.current.parentElement.contains(e.target)) {
+            setDropState(false);
+            document.removeEventListener('click', HandleDocument)
+        }
+    }
+
+    const setMaxNote = (e) => {
+        let Num = Number(e.target.value);
+        if(Num === 0){
+            Num = 20;
+        }
+        App.setConfig(prevConfig => ({
+            ...prevConfig,
+            MaxNote: Num
+        }));
+
+
+        document.querySelectorAll('.app-input[inputype = false').forEach(element => {
+            if (element.value && Number(element.value) > Num) {
+                element.value = Num;
+            }
+        });
+    };
+    const MaxNoteValidation = (e)=> {
+        let Num = Number(e.target.value);
+        if (Num <= 0) {
+            e.target.value = '';
+        } else if (Num >= 1000) {
+            e.target.value = 1000;
+        }
+    }
+
+
+
+
+    const setDecimals = (e) => {
+        App.setConfig(prevConfig => ({
+            ...prevConfig,
+            Decimals: e.target.checked
+        }))
+    }
+
     return (
         <section className="app-left f-col g-10">
             <div className="app-config relative">
-                <section className='click f-row f-justify-between f-align-center pointer' onClick={HandleOpenConfig}>
+                <section className='click f-row f-justify-between f-align-center pointer' onClick={HandleDropConfig}>
                     <p className='app-text no-select' style={{ fontSize: '14.5px', margin: '0px' }}>Configuration</p>
                     <span className='separator no-select'></span>
                     <span className='arrow no-select'>
@@ -23,24 +76,25 @@ export default function Result() {
                         </svg>
                     </span>
                 </section>
-                <section className='app-drop-config absolute f-col br-8 d-none o-hidden'>
-                    <h4>Configuration</h4>
-                    <div className='f-col'>
-
-                    </div>
+                <section className={`app-drop-config absolute f-col br-8 o-hidden ${DropState ? null : 'd-none'}`} style={{ zIndex: 10 }} ref={Drop}>
+                    <h4 style={{ zIndex: 10 }}>Configuration</h4>
+                    <ul className='f-col px-3 py-2 g-10' style={{ zIndex: 10 }}>
+                        <li className='f-row f-justify-between f-align-center'><p>Decimals</p><input type="checkbox" onChange={setDecimals} /></li>
+                        <li className='f-row f-justify-between f-align-center'><p>Max Note</p><input className='p-2 br-6' placeholder='20' maxLength={4} type="text" onChange={MaxNoteValidation} onKeyDown={(e) => Counting(e, setMaxNote)} /></li>
+                    </ul>
                 </section>
             </div>
             <div className="app-result br-12 f-col f-align-center g-30">
                 <span className='f-col g-25'>
-                    <h3 className='app-title'>Final Result</h3>
+                    <h3 className='app-title' style={{ fontSize: 22 }}>Final Result</h3>
                     <div className="d-flex f-center relative">
-                        <h4 className='text-center'>{Math.floor(Result)}</h4>
+                        <h4 className='text-center'>{Math.floor(App.Result)}</h4>
                         <div className="absolute">
 
                         </div>
                     </div>
                 </span>
-                <p className='text-center'>{Result >= 11.5 ? 'Felicidades !Aprobaste!' : 'Lo sentimos, No aprobaste'}</p>
+                <p className='text-center'>{App.Result >= 11.5 ? 'Felicidades !Aprobaste!' : 'Lo sentimos, No aprobaste'}</p>
 
             </div>
         </section>
