@@ -7,5 +7,8 @@ export default defineConfig({
   site: 'https://lifo123.github.io/',
   base: 'PromedyCalculator',
   outDir: 'Build',
-  integrations: [react()]
+  integrations: [react()],
+  build: {
+    assets: 'astro'
+  }
 });
