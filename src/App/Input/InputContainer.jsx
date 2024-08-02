@@ -27,22 +27,22 @@ export default function InputContainer() {
 
     const DeleteInput = (id) => {
         let newList = Inputs.filter((input) => input.id !== id);
-        AppInputStore.set(newList)
+        AppInputStore.set(newList);
     };
 
-    const SaveData = (e) => {
-        let newList = [];
+    const SaveData = () => {
+        let NewList = [];
         document.querySelectorAll('.app-input-parent[inputid]').forEach(element => {
-            newList = [...newList, {
+            NewList = [...NewList, {
                 Note: element.querySelector('.app-input').value,
                 id: Number(element.getAttribute('inputid')),
                 per: element.querySelector('.app-input-per').value
             }]
         })
-        AppInputStore.set(newList);
+        AppInputStore.set(NewList);
+
+        return NewList
     }
-
-
 
     return (
         <ul className='f-col g-15 f-center'>
@@ -50,11 +50,13 @@ export default function InputContainer() {
                 Inputs && Inputs.map((item, index) => (
                     <section key={item.id} className='app-input-parent f-row f-justify-center g-15' inputid={item.id}>
                         <Input
-                            text={item.Note ? item.Note : `Nota ${index + 1}`}
+                            text={item.Note ? item.Note : `Nota ${item.id}`}
+                            save={SaveData}
                         />
                         <InputPer
                             Delete={() => DeleteInput(item.id)}
                             msg={setInMsg}
+                            save={SaveData}
                         />
                     </section>
                 ))

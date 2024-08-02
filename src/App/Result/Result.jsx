@@ -18,7 +18,7 @@ export default function Result() {
                 <span className='f-col g-25'>
                     <h4 className='app-title text-center' style={{ fontSize: 22 }}>Final Result</h4>
                     <div className="d-flex f-center relative">
-                        <h4 className='text-center'>{Decimal ? Result.toFixed(2) : Math.floor(Result)}</h4>
+                        <h4 className='text-center'>{Decimal ? Result.toFixed(2) : Math.round(Result)}</h4>
                     </div>
                 </span>
                 <p className='text-center'>{Result >= 11.5 ? 'Felicidades !Aprobaste!' : 'Lo sentimos, No aprobaste'}</p>

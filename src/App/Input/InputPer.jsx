@@ -1,10 +1,18 @@
-import { useStore } from '@nanostores/react';
 import './Input.css'
+
+import { useStore } from '@nanostores/react';
 import { AppInputStore } from '../context/App';
 
-export default function Input({msg, Delete }) {
+import usePromedy from '../../Hooks/usePromedy';
+import { ResultStore } from '../../context/GlobalContext';
+
+export default function Input({ msg, Delete, save }) {
     //AppStates
-     const Inputs = useStore(AppInputStore)
+    const Result = useStore(ResultStore)
+    const Inputs = useStore(AppInputStore)
+
+    //States
+    const Promedy = usePromedy();
 
     //Functions
     const HandleChange = (e) => {
@@ -18,7 +26,7 @@ export default function Input({msg, Delete }) {
 
         msg(Sum !== 100 ? 'No suman 100%' : null);
 
-
+        ResultStore.set(Promedy.Ponderado(save()).Result)
     }
 
     return (
