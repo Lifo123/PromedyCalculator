@@ -6,3 +6,5 @@ export const AppInputStore = atom([
     { Note: '', id: 3, per: '' },
     { Note: '', id: 4, per: '' }
 ]);
+
+export const NoPerStore = atom(25);

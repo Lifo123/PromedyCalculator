@@ -1,6 +1,6 @@
 import { useStore } from '@nanostores/react';
 import { useState } from 'react';
-import { AppInputStore } from '../context/App';
+import { AppInputStore, NoPerStore } from '../context/App';
 
 import Input from '../Input/Input'
 import InputPer from '../Input/InputPer'
@@ -9,7 +9,8 @@ import InputPer from '../Input/InputPer'
 
 export default function InputContainer() {
     //AppStates
-    const Inputs = useStore(AppInputStore)
+    const Inputs = useStore(AppInputStore);
+    const Per = useStore(NoPerStore);
 
     //States
     const [InMsg, setInMsg] = useState(null);
@@ -17,17 +18,20 @@ export default function InputContainer() {
 
     //Functions
     const AddInput = () => {
-        SaveData();
+        let NewList = SaveData();
+
         AppInputStore.set([...Inputs, {
             Note: '',
             id: Inputs.reduce((maxId, input) => Math.max(maxId, input.id), 0) + 1,
             per: ''
         }]);
+        NoPerStore.set(100 / (NewList.length + 1))
     };
 
     const DeleteInput = (id) => {
         let newList = Inputs.filter((input) => input.id !== id);
         AppInputStore.set(newList);
+        NoPerStore.set(100 / newList.length)
     };
 
     const SaveData = () => {

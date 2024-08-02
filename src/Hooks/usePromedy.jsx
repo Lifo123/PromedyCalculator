@@ -14,19 +14,27 @@ export default function usePromedy() {
     const Ponderado = (array,) => {
         let Result = 0;
         let NoPer = 100;
+        let NoPerItems = array.length;
 
         array.forEach(element => {
             if (element.per) {
                 NoPer -= Number(element.per)
+                NoPerItems--
             }
         })
 
         array.forEach(element => {
             let Nota = Number(element.Note);
             let Peso = Number(element.per ? element.per : (NoPer / array.length + 1)) / 100
-            Result += Nota * Peso
-            console.log(Peso);
+            if(element.per){
+                Result += Nota * Peso
+            }else{
+                Result = Result;
+            }
         })
+        if(NoPer !== 100){
+            NoPer =  NoPer / NoPerItems
+        }
 
         return { Result, NoPer }
 
