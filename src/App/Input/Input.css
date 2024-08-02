@@ -1,18 +1,31 @@
-.app-input-parent{  
+.app-input-parent {
     width: 100%;
 }
-.app-input{
+
+.app-input-div {
     min-width: 80px;
     width: 80%;
+}
+
+.app-input-input {
     border: solid 1px #4F4F4F;
+    width: 100%;
     padding: 12px 20px;
     font-size: 16px;
 }
 
-.app-in-per-list{
+.app-input-div span {
+    height: 100%;
+    width: 56px;
+    right: 0px;
+    font-size: 15px;
+}
+
+.app-in-per-list {
     width: fit-content;
 }
-.app-input-per{
+
+.app-input-per {
     min-width: 60px;
     width: 80px;
     border: solid 1px #4F4F4F;
@@ -20,7 +33,7 @@
     font-size: 16px;
 }
 
-.app-in-close{
+.app-in-close {
     height: 40px;
     width: 40px;
     opacity: 0;
@@ -30,16 +43,18 @@
     right: -6px;
     scale: 1.2;
 }
-.app-in-close svg{
+
+.app-in-close svg {
     stroke: #d12133;
-    transform: translateX(-20px);
+    transform: translateX(-10px);
     transition: transform 0.2s;
 }
 
-.app-in-close:hover{
+.app-in-close:hover {
     opacity: 1;
     cursor: pointer;
 }
-.app-in-close:hover svg{
+
+.app-in-close:hover svg {
     transform: translateX(0px);
 }

@@ -8,3 +8,4 @@ export const AppInputStore = atom([
 ]);
 
 export const NoPerStore = atom(25);
+export const MiniumNoteStore = atom(11.5);

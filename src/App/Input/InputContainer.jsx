@@ -38,7 +38,7 @@ export default function InputContainer() {
         let NewList = [];
         document.querySelectorAll('.app-input-parent[inputid]').forEach(element => {
             NewList = [...NewList, {
-                Note: element.querySelector('.app-input').value,
+                Note: element.querySelector('.app-input-input').value,
                 id: Number(element.getAttribute('inputid')),
                 per: element.querySelector('.app-input-per').value
             }]
@@ -66,7 +66,7 @@ export default function InputContainer() {
                 ))
             }
             <section className='app-input-parent f-row f-justify-center g-15' >
-                <p className='app-input none f-row f-justify-end'>{InMsg ? InMsg : null}</p>
+                <p className='app-input-div none f-row f-justify-end f-align-center'>{InMsg ? InMsg : null}</p>
                 <div className='app-in-per-list f-row f-align-center'>
                     <span className='pc-btn-black d-flex f-justify-center br-6' onClick={AddInput}>Add</span>
                     <span className='app-in-close none no-select'></span>

@@ -2,12 +2,17 @@ import './Result.css'
 
 import { useStore } from '@nanostores/react';
 import { DecimalStore, ResultStore } from '../../context/GlobalContext';
+import { MiniumNoteStore } from '../context/App';
+
 import AppConfig from './AppConfig';
 
 export default function Result() {
     //GlobalStates
     const Result = useStore(ResultStore);
     const Decimal = useStore(DecimalStore);
+
+    //AppStates
+    const MiniumNote = useStore(MiniumNoteStore);
 
     return (
         <section className="app-left f-col g-10">
@@ -21,7 +26,7 @@ export default function Result() {
                         <h4 className='text-center'>{Decimal ? Result.toFixed(2) : Math.round(Result)}</h4>
                     </div>
                 </span>
-                <p className='text-center'>{Result >= 11.5 ? 'Felicidades !Aprobaste!' : 'Lo sentimos, No aprobaste'}</p>
+                <p className='text-center'>{Result >= MiniumNote ? 'Felicidades !Aprobaste!' : 'Lo sentimos, No aprobaste'}</p>
 
             </div>
         </section>

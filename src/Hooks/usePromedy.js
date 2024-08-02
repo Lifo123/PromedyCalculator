@@ -11,11 +11,11 @@ export default function usePromedy() {
         return Result / props.length
     }
 
-    const Ponderado = (array,) => {
+    const Ponderado = (array) => {
         let Result = 0;
         let NoPer = 100;
         let NoPerItems = array.length;
-
+        
         array.forEach(element => {
             if (element.per) {
                 NoPer -= Number(element.per)
@@ -34,6 +34,8 @@ export default function usePromedy() {
         })
         if(NoPer !== 100){
             NoPer =  NoPer / NoPerItems
+        }else if(NoPer === 100){
+            NoPer = 25
         }
 
         return { Result, NoPer }

@@ -2,9 +2,10 @@ import './Input.css'
 
 import { useStore } from '@nanostores/react';
 import { AppInputStore, NoPerStore } from '../context/App';
+import { ResultStore } from '../../context/GlobalContext';
 
 import usePromedy from '../../Hooks/usePromedy';
-import { ResultStore } from '../../context/GlobalContext';
+import { useState } from 'react';
 
 export default function Input({ msg, Delete, save }) {
     //AppStates
@@ -27,10 +28,26 @@ export default function Input({ msg, Delete, save }) {
 
         msg(Sum !== 100 ? 'No suman 100%' : null);
 
+        GetLocalPromedy(e)
+
         const Ponderaded = Promedy.Ponderado(save());
 
         ResultStore.set(Ponderaded.Result)
         NoPerStore.set(Ponderaded.NoPer)
+    }
+
+    const GetLocalPromedy = (e) => {
+        const parent = e.target.closest('.app-input-parent');
+        const Note = Number(parent.querySelector('.app-input-input').value);
+        const Per = Number(parent.querySelector('.app-input-per').value) / 100;
+
+        if(Per !== 0){
+            parent.querySelector('.app-input-local').innerHTML = (Note * Per).toFixed(2);
+        }else{
+            parent.querySelector('.app-input-local').innerHTML = '';
+        }
+
+        
     }
 
     return (

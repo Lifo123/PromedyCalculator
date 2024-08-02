@@ -24,21 +24,6 @@
     align-self: flex-end;
 }
 
-.app-result{
-    height: 290px;
-    border: solid 1px #6D6D6D;
-    padding: 20px;
-}
-
-.app-result h4{
-    font-size: 80px;
-    font-weight: bold;
-}
-.app-result p{
-    border-top: solid 1px #6D6D6D;
-    padding: 24px 30px 6px 30px;
-}
-
 .promotion-adds{
     margin-top: 20px;
 }

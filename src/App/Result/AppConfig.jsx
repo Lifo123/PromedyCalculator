@@ -13,7 +13,7 @@ export default function AppConfig() {
     const Drop = useRef(null);
 
     //Hooks
-    const { Counting } = useTimer(40);
+    const { Counting } = useTimer(15);
 
     //States
     const [DropState, setDropState] = useState(false);
@@ -47,7 +47,7 @@ export default function AppConfig() {
 
         MaxNoteStore.set(Num);
 
-        document.querySelectorAll('.app-input[inputype = false').forEach(element => {
+        document.querySelectorAll('.app-input[use = "yes"').forEach(element => {
             if (element.value && Number(element.value) > Num) {
                 element.value = Num;
             }
@@ -73,7 +73,7 @@ export default function AppConfig() {
             <section className={`app-drop-config absolute f-col br-8 o-hidden ${DropState ? null : 'd-none'}`} style={{ zIndex: 10 }} ref={Drop}>
                 <h4 style={{ zIndex: 10 }}>Configuration</h4>
                 <ul className='f-col px-3 py-2 g-10' style={{ zIndex: 10 }}>
-                    <li className='f-row f-justify-between f-align-center'><p>Decimals</p><input type="checkbox" onChange={setDecimals} /></li>
+                    <li className='f-row f-justify-between f-align-center'><p>Decimals</p><input type="checkbox" onChange={setDecimals} checked={Decimal}/></li>
                     <li className='f-row f-justify-between f-align-center'><p>Max Note</p><input className='p-2 br-6' placeholder='20' maxLength={4} type="text" onChange={MaxNoteValidation} onKeyDown={(e) => Counting(e, setMaxNote)} /></li>
                 </ul>
             </section>

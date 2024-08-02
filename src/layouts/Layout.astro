@@ -4,12 +4,8 @@ import '../css/Flifo.css'
 
 import BaseHead from './BaseHead.astro';
 
-interface Props {
-    title: string;
-    description: string,
-}
+const { title = 'PromedyCalculator', description } = Astro.props;
 
-const { title,description } = Astro.props;
 
 ---
 
@@ -17,10 +13,20 @@ const { title,description } = Astro.props;
     <head>
         <title>{title}</title>
         <meta name="Author" content="Lifo123" />
-
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
         <meta name="google-site-verification" content="QAGlLlv_gtS49AYu1kBdgNivwvrHyZ8bMfWGo5DgfhY" />
+        <!--                                                                                                                                                   
+            |***********************************************************************************|
+            |                                                                                   |
+            |  ██       ██   ███████    ████████         ████████     ████████    ███      ███  |
+            |  ██       ██   ██        ██      ██       ██      ██   ██      ██   ████    ████  |
+            |  ██       ██   ███████   ██      ██       ██           ██      ██   ██ ██  ██ ██  |
+            |  ██       ██   ██        ██      ██       ██      ██   ██      ██   ██  ████  ██  |
+            |  ███████  ██   ██         ████████   ██    ████████     ████████    ██        ██  |
+            |                                                                                   |
+            |***********************************************************************************|
+        -->
 
         <!--Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
