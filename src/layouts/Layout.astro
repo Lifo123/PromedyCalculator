@@ -4,7 +4,7 @@ import '../css/Flifo.css'
 
 import BaseHead from './BaseHead.astro';
 
-const { title = 'PromedyCalculator', description } = Astro.props;
+const { title = 'PromedyCalculator', description = 'Calculate Promedy' } = Astro.props;
 
 
 ---
@@ -13,6 +13,8 @@ const { title = 'PromedyCalculator', description } = Astro.props;
     <head>
         <title>{title}</title>
         <meta name="Author" content="Lifo123" />
+        <meta name="description" content={description}>
+
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
         <meta name="google-site-verification" content="QAGlLlv_gtS49AYu1kBdgNivwvrHyZ8bMfWGo5DgfhY" />

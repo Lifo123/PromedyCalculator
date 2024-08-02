@@ -19,7 +19,7 @@ export default function useTimer( initialTimer = 15, speed = 30) {
                 Funct(e);
                 clearInterval(interval);
             }
-            //console.log(Timer);
+            console.log(Timer);
         }, speed);
     };
 

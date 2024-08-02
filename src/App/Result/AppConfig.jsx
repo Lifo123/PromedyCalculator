@@ -13,7 +13,7 @@ export default function AppConfig() {
     const Drop = useRef(null);
 
     //Hooks
-    const { Counting } = useTimer(15);
+    const { Counting } = useTimer(8);
 
     //States
     const [DropState, setDropState] = useState(false);
@@ -44,14 +44,15 @@ export default function AppConfig() {
         if (Num === 0) {
             Num = 20;
         }
-
-        MaxNoteStore.set(Num);
-
-        document.querySelectorAll('.app-input[use = "yes"').forEach(element => {
+        
+        document.querySelectorAll('.app-input-input[use = "yes"').forEach(element => {
             if (element.value && Number(element.value) > Num) {
                 element.value = Num;
             }
         });
+
+        MaxNoteStore.set(Num);
+        
     };
     
 

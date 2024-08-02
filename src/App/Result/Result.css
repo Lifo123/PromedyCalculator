@@ -49,3 +49,12 @@
     width: 30%;
     text-align: center;
 }
+
+.aproved{
+    color: green;
+    font-weight: 500;
+}
+
+.reprobed{
+    color: red;
+}

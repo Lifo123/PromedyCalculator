@@ -5,6 +5,7 @@ import { DecimalStore, ResultStore } from '../../context/GlobalContext';
 import { MiniumNoteStore } from '../context/App';
 
 import AppConfig from './AppConfig';
+import { useEffect } from 'react';
 
 export default function Result() {
     //GlobalStates
@@ -14,19 +15,25 @@ export default function Result() {
     //AppStates
     const MiniumNote = useStore(MiniumNoteStore);
 
+    useEffect(() => {
+        if(Result === undefined){
+            ResultStore.set(20)
+        }
+    }, [])
+
     return (
         <section className="app-left f-col g-10">
             <div className="app-config relative">
                 <AppConfig />
             </div>
-            <div className="app-result br-12 f-col f-align-center g-30" style={{width: Decimal ? 320 : 280}}>
+            <div className="app-result br-12 f-col f-align-center g-30" style={{width: Decimal ? 320 : 290}}>
                 <span className='f-col g-25'>
-                    <h4 className='app-title text-center' style={{ fontSize: 22 }}>Final Result</h4>
+                    <h2 className='app-title text-center' style={{ fontSize: 22 }}>Final Result</h2>
                     <div className="d-flex f-center relative">
                         <h4 className='text-center'>{Decimal ? Result.toFixed(2) : Math.round(Result)}</h4>
                     </div>
                 </span>
-                <p className='text-center'>{Result >= MiniumNote ? 'Felicidades !Aprobaste!' : 'Lo sentimos, No aprobaste'}</p>
+                <p className={`text-center ${Result >= MiniumNote ? 'aproved' : 'reprobed'}`}>{Result >= MiniumNote ? 'Congratulations! You passed!' : 'Sorry, you failed.'}</p>
 
             </div>
         </section>
