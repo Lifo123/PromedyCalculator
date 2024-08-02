@@ -69,13 +69,13 @@ export default function InputContainer() {
                     />
                 ))
             }
-            <section className='app-input-parent f-row f-justify-center g-15' >
+            <li className='app-input-parent f-row f-justify-center g-15' >
                 <p className='app-text-error app-input-div none f-row f-justify-end f-align-center'>{InMsg ? InMsg : null}</p>
                 <div className='app-in-per-list f-row f-align-center'>
                     <span className='pc-btn-black d-flex f-justify-center br-6' onClick={AddInput}>Add</span>
                     <span className='app-in-close none no-select'></span>
                 </div>
-            </section>
+            </li>
         </ul>
     )
 }

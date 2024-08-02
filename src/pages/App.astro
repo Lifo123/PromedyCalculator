@@ -1,11 +1,14 @@
 ---
 //Css
-import '../App/App.css'
+import "../App/App.css";
 
+//Astro
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header/Header.astro";
 import Footer from "../components/Footer/Footer.astro";
+import PromotionAdd from "../components/PromotionAdd/PromotionAdd.astro";
 
+//JSX
 import Result from "../App/Result/Result";
 import InputContainer from "../App/Input/InputContainer";
 
@@ -27,7 +30,10 @@ import InputContainer from "../App/Input/InputContainer";
     }
 </style>
 
-<Layout title="PromedyCalculator | App" description="Calculate promedy of the semester easly.">
+<Layout
+    title="PromedyCalculator | App"
+    description="Calculate promedy of the semester easly."
+>
     <Header app={true} />
     <main class="f-col mx-auto" id="App">
         <a href="/PromedyCalculator" class="btn-back f-row f-align-center">
@@ -48,22 +54,23 @@ import InputContainer from "../App/Input/InputContainer";
         <section class="app-container mx-auto">
             <Result client:visible />
             <section class="app-right f-col">
-                <h3 class='app-subtitle'>Promedy Calculator</h3>
-                <p class='app-text'>Please enter the necessary inputs to calculate your results accurately.</p>
-                <InputContainer client:visible/>
+                <h3 class="app-subtitle">Promedy Calculator</h3>
+                <p class="app-text">
+                    Please enter the necessary inputs to calculate your results
+                    accurately.
+                </p>
+                <InputContainer client:visible />
             </section>
         </section>
     </main>
     <section class="w-70 mx-auto f-col f-align-center g-5">
         <h3 class="app-title">More Tools</h3>
         <p class="app-text w-60 text-center" style="font-size: 18px;">
-            Explore these amazing websites with innovative features designed to make your life easier and efficient!
+            Explore these amazing websites with innovative features designed to
+            make your life easier and efficient!
         </p>
-        <div class="promotion-adds f-row f-justify-center g-50">
-            <div class="add-card"></div>
-            <div class="add-card"></div>
-        </div>
+
+        <PromotionAdd />
     </section>
     <Footer />
 </Layout>
-

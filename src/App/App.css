@@ -23,13 +23,3 @@
     padding: 12px 24px !important;
     align-self: flex-end;
 }
-
-.promotion-adds{
-    margin-top: 20px;
-}
-.add-card{
-    border: solid 1px #6D6D6D;
-    border-radius: 8px;
-    height: 200px;
-    width: 380px;
-}

@@ -30,7 +30,7 @@ export default function Result() {
                 <span className='f-col g-25'>
                     <h2 className='app-title text-center' style={{ fontSize: 22 }}>Final Result</h2>
                     <div className="d-flex f-center relative">
-                        <h4 className='text-center'>{Decimal ? Result.toFixed(2) : Math.round(Result)}</h4>
+                        <h3 className='text-center'>{Decimal ? Result.toFixed(2) : Math.round(Result)}</h3>
                     </div>
                 </span>
                 <p className={`text-center ${Result >= MiniumNote ? 'aproved' : 'reprobed'}`}>{Result >= MiniumNote ? 'Congratulations! You passed!' : 'Sorry, you failed.'}</p>
