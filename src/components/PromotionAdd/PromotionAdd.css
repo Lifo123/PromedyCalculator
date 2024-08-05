@@ -2,16 +2,18 @@
 
 .promotion-adds{
     width: 100%;
-    justify-content: center;
     margin-top: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
+
 }
 
 .project-card {
     background-color: var(--p-bg);
     border: solid 1px #c0c0c0;
     height: 300px;
-    width: 340px;
+    width: clamp(280px, 100%);
+    flex: 1;
 }
 
 .redirect-link{
