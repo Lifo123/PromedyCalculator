@@ -1,10 +1,11 @@
 .app-input-parent {
+    grid-template-columns: 1fr auto;
     width: 100%;
 }
 
 .app-input-div {
     min-width: 80px;
-    width: 80%;
+    flex: 1;
 }
 
 .app-input-input {
@@ -22,15 +23,26 @@
 }
 
 .app-in-per-list {
-    width: fit-content;
+    min-width: 120px;
+    width: 120px;
 }
 
-.app-input-per {
-    min-width: 60px;
+.app-label-in-per {
+    min-width: 50px;
     width: 80px;
     border: solid 1px #4F4F4F;
     padding: 12px;
-    font-size: 16px;
+    cursor: text;
+}
+.app-label-in-per span{
+    margin-right: 6px;
+    color: #3d3d3d;
+}
+.app-input-per {
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: end;
 }
 
 .app-in-close {

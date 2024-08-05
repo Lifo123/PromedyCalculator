@@ -14,48 +14,32 @@ export function usePromedy() {
 
     //
     const Ponderado = (array) => {
+
         let Result = 0;
         let NoPer = 100;
-        let NoPerItems = array.length;
-        const hasPerValue = array.some(element => element.per);
+        let NoPerItems = array.filter(item => item.per === '');
+        
+        
+        array.forEach(item => {
+            NoPer -= item.per
+        })
 
-        if(!hasPerValue){
-            NoPer = NoPer / NoPerItems
-            Result = Normal(array)
-            return {Result, array, NoPer};
-        }else{
-            array.forEach(element => {
-                if (element.per) {
-                    NoPer -= Number(element.per)
-                    NoPerItems--
-                }
-            })
-    
-            array.forEach(element => {
-                let Nota = Number(element.Note);
-                let Peso = Number(element.per ? element.per : (NoPer / array.length + 1)) / 100
-                if (element.per) {
-                    Result += Nota * Peso
-                } else {
-                    Result = Result;
-                }
-            })
+        NoPer = NoPer / NoPerItems.length
 
-        }
+        array.forEach(item => {
+            Result += item.Note * (item.per ? (item.per / 100) : NoPer / 100)
+        })
+        
 
-        if(NoPer !== 100){
-            NoPer = NoPer / NoPerItems;
-        }
 
         return { Result, NoPer, array }
 
     }
 
-    const Inline = (data) => {
-        if(data.Note && data.per){
-            return Number(data.Note) * (Number(data.per) / 100)
-        }
+    const Local = (Note, Per) => {
+        
+        return Note * (Per / 100)
     }
 
-    return { Normal, Ponderado, Inline }
+    return { Normal, Ponderado, Local }
 }

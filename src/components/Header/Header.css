@@ -44,3 +44,8 @@ header .h-burger{
     height: 50px;
     width: 50px;
 }
+
+header aside{
+    top: 0px;
+    right: 0px;
+}

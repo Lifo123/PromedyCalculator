@@ -23,3 +23,36 @@
     padding: 12px 24px !important;
     align-self: flex-end;
 }
+
+
+@media(1200px > width){
+    header{
+        padding-inline: 5vw !important;
+    }
+    .prom-section{
+        width: 90% !important;
+    }
+    .w-60{
+        width: 80% !important;
+    }
+}
+@media(550px > width){
+    .app-right{
+        width: 92%;
+    }
+    .app-input-parent{
+        width: 90% !important;
+    }
+    .none{
+        width: 146px !important;
+    }
+}
+@media(450px > width){
+    
+    #App{
+        width: 90% !important;
+    }
+    .app-container{
+        width: 100% !important;
+    }
+}

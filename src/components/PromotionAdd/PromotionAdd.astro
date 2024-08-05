@@ -17,7 +17,7 @@ const Projects = await fetchProjects();
 
 ---
 
-<section class="w-80 mx-auto f-col f-align-center g-5">
+<section class="w-80 prom-section mx-auto f-col f-align-center g-5">
   <h3 class="app-title">More Tools</h3>
   <p class="app-text w-60 text-center" style="font-size: 18px;">
       Explore these amazing websites with innovative features designed to
@@ -41,7 +41,7 @@ const Projects = await fetchProjects();
               <div class="f-row f-justify-between f-align-center w-100">
                 <h3 class="app-subtitle">{item.tittle}</h3>
               </div>
-              <p class="app-text" style="margin: 0;">{item.description}</p>
+              <p class="app-text" style="margin: 0;">{item.description.slice(0, 57)}{item.description.length > 57 ? '...' : null}</p>
               <a
                 class="prom-btn br-max w-100 f-row f-center g-10"
                 href={item.websiteURL}

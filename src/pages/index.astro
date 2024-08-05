@@ -3,6 +3,24 @@ import Header from "../components/Header/Header.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
+<Layout title="PromedyCalculator" description="Landing page">
+    <Header />
+    <main class="f-col f-align-center mx-auto">
+        <h2 class="text-center w-90">
+            Calculate Your Average Grades Instantly and Effortlessly!
+        </h2>
+        <p class="text-center">
+            Quickly get accurate results with our simple tool. No more manual
+            calculations—just enter your grades and get your average in seconds.
+        </p>
+        <a
+            href="/PromedyCalculator/App"
+            class="pc-btn-black br-6 d-flex f-center"
+            style="font-size: 16px;">Get Started For Free</a
+        >
+    </main>
+</Layout>
+
 <style is:raw>
     main {
         padding-block: 90px;
@@ -25,21 +43,3 @@ import Layout from "../layouts/Layout.astro";
         font-size: clamp(1rem, 0.6vw, 1.5rem);
     }
 </style>
-
-<Layout title="PromedyCalculator" description="Landing page">
-    <Header />
-    <main class="f-col f-align-center mx-auto">
-        <h2 class="text-center w-90">
-            Calculate Your Average Grades Instantly and Effortlessly!
-        </h2>
-        <p class="text-center">
-            Quickly get accurate results with our simple tool. No more manual
-            calculations—just enter your grades and get your average in seconds.
-        </p>
-        <a
-            href="/PromedyCalculator/App"
-            class="pc-btn-black br-6 d-flex f-center"
-            style="font-size: 16px;">Get Started For Free</a
-        >
-    </main>
-</Layout>

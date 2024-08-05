@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export default function useTimer( initialTimer = 15, speed = 30) {
     //States
     let Timer = initialTimer;
@@ -19,7 +17,7 @@ export default function useTimer( initialTimer = 15, speed = 30) {
                 Funct(e);
                 clearInterval(interval);
             }
-            console.log(Timer);
+            //console.log(Timer);
         }, speed);
     };
 
