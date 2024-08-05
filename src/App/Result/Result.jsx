@@ -2,7 +2,7 @@ import './Result.css'
 
 import { useStore } from '@nanostores/react';
 import { DecimalStore, ResultStore } from '../../context/GlobalContext';
-import { MiniumNoteStore } from '../context/App';
+import { MiniumNoteStore } from '../../context/GlobalContext';
 
 import AppConfig from './AppConfig';
 import { useEffect } from 'react';
@@ -33,7 +33,7 @@ export default function Result() {
                         <h3 className='text-center'>{Decimal ? Result.toFixed(2) : Math.round(Result)}</h3>
                     </div>
                 </span>
-                <p className={`text-center ${Result >= MiniumNote ? 'aproved' : 'reprobed'}`}>{Result >= MiniumNote ? 'Congratulations! You passed!' : 'Sorry, you failed.'}</p>
+                <p className={`text-center ${Math.round(Result) >= MiniumNote ? 'aproved' : 'reprobed'}`}>{Math.round(Result) >= MiniumNote ? 'Congratulations! You passed!' : 'Sorry, you failed.'}</p>
 
             </div>
         </section>

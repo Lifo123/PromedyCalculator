@@ -1,11 +1,10 @@
 ---
-interface Props {
-    title: string;
-    description: string;
-}
 
 const { title, description } = Astro.props;
-const url = Astro.site;
+const site = new URL(Astro.site);
+const path = Astro.url.pathname;
+const url = new URL(path, site).href;
+
 ---
 
 <!-- OpenGraph Tags -->

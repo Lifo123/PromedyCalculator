@@ -1,11 +1,12 @@
 import { useRef, useState } from "react";
 import { useStore } from "@nanostores/react";
-import { MaxNoteStore, DecimalStore } from "../../context/GlobalContext";
+import { MaxNoteStore, DecimalStore, MiniumNoteStore } from "../../context/GlobalContext";
 
 import useTimer from "../../Hooks/useTimer";
 
 export default function AppConfig() {
     //GlobalStates
+    const MinNoteAprove = useStore(MiniumNoteStore);
     const MaxNote = useStore(MaxNoteStore);
     const Decimal = useStore(DecimalStore);
  
@@ -13,7 +14,7 @@ export default function AppConfig() {
     const Drop = useRef(null);
 
     //Hooks
-    const { Counting } = useTimer(8);
+    const { Counting } = useTimer(14);
 
     //States
     const [DropState, setDropState] = useState(false);
@@ -55,7 +56,9 @@ export default function AppConfig() {
         
     };
     
-
+    const setMiniumNoteAprove = (e) => {
+        MiniumNoteStore.set(Number(e.target.value))
+    }
     const setDecimals = (e) => {
         DecimalStore.set(e.target.checked);
     }
@@ -76,6 +79,7 @@ export default function AppConfig() {
                 <ul className='f-col px-3 py-2 g-10' style={{ zIndex: 10 }}>
                     <li className='f-row f-justify-between f-align-center'><p>Decimals</p><input type="checkbox" onChange={setDecimals} checked={Decimal}/></li>
                     <li className='f-row f-justify-between f-align-center'><p>Max Note</p><input className='p-2 br-6' placeholder='20' maxLength={4} type="text" onChange={MaxNoteValidation} onKeyDown={(e) => Counting(e, setMaxNote)} /></li>
+                    <li className='f-row f-justify-between f-align-center'><p>Min Note Aproved</p><input className='p-2 br-6' placeholder='11.5' maxLength={4} type="text" onChange={setMiniumNoteAprove} /></li>
                 </ul>
             </section>
         </>

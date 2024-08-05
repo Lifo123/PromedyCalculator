@@ -9,6 +9,6 @@ export default defineConfig({
   outDir: 'Build',
   integrations: [react()],
   build: {
-    assets: 'astro'
+    assets: 'assets'
   }
 });

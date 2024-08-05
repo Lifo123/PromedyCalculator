@@ -6,7 +6,7 @@ import Input from './Input'
 import InputPer from './InputPer'
 
 
-export default function InputList({ data, SaveData, msg, Delete }) {
+export default function InputList({ data, SaveData, msg, Delete}) {
     //States
     const Promedy = usePromedy();
     const [LocalPromedy, setLocalPromedy] = useState(null);
