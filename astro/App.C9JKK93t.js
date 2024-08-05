@@ -1,9 +1,0 @@
-import{r as c}from"./index.DhYZZe0J.js";var d={exports:{}},a={};/**
- * @license React
- * react-jsx-runtime.production.min.js
- *
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */var m=c,v=Symbol.for("react.element"),S=Symbol.for("react.fragment"),x=Object.prototype.hasOwnProperty,b=m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner,k={key:!0,ref:!0,__self:!0,__source:!0};function _(o,l,i){var e,t={},s=null,u=null;i!==void 0&&(s=""+i),l.key!==void 0&&(s=""+l.key),l.ref!==void 0&&(u=l.ref);for(e in l)x.call(l,e)&&!k.hasOwnProperty(e)&&(t[e]=l[e]);if(o&&o.defaultProps)for(e in l=o.defaultProps,l)t[e]===void 0&&(t[e]=l[e]);return{$$typeof:v,type:o,key:s,ref:u,props:t,_owner:b.current}}a.Fragment=S;a.jsx=_;a.jsxs=_;d.exports=a;var R=d.exports;let n=[],f=(o,l)=>{let i=[],e={get(){return e.lc||e.listen(()=>{})(),e.value},l:0,lc:0,listen(t,s){return e.lc=i.push(t,s||e.l)/2,()=>{let u=i.indexOf(t);~u&&(i.splice(u,2),--e.lc||e.off())}},notify(t,s){let u=!n.length;for(let r=0;r<i.length;r+=2)n.push(i[r],i[r+1],e.value,t,s);if(u){for(let r=0;r<n.length;r+=5){let p;for(let y=r+1;!p&&(y+=5)<n.length;)n[y]<n[r+1]&&(p=n.push(n[r],n[r+1],n[r+2],n[r+3],n[r+4]));p||n[r](n[r+2],n[r+3],n[r+4])}n.length=0}},off(){},set(t){let s=e.value;s!==t&&(e.value=t,e.notify(s))},subscribe(t,s){let u=e.listen(t,s);return t(e.value),u},value:o};return e};function N(o,l,i){let e=new Set([...l,void 0]);return o.listen((t,s,u)=>{e.has(u)&&i(t,s,u)})}function E(o,l={}){let i=c.useCallback(t=>l.keys?N(o,l.keys,t):o.listen(t),[l.keys,o]),e=o.get.bind(o);return c.useSyncExternalStore(i,e,e)}const O=f(20),g=f(20),j=f(!1),P=f([{Note:"",id:1,per:""},{Note:"",id:2,per:""},{Note:"",id:3,per:""},{Note:"",id:4,per:""}]),w=f(25),D=f(11.5);export{P as A,j as D,g as M,w as N,O as R,D as a,R as j,E as u};
