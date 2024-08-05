@@ -38,13 +38,13 @@ importers:
       react-dom:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
-      sass:
-        specifier: ^1.77.8
-        version: 1.77.8
     devDependencies:
       gh-pages:
         specifier: ^6.1.1
         version: 6.1.1
+      sass:
+        specifier: ^1.77.8
+        version: 1.77.8
 
 packages:
 
