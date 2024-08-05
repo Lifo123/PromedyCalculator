@@ -12,7 +12,8 @@
     background-color: var(--p-bg);
     border: solid 1px #c0c0c0;
     height: 300px;
-    width: clamp(280px, 100%);
+    width: 100%;
+    max-width: 300px;
     flex: 1;
 }
 
